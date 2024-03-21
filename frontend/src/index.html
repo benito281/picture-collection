@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Picture Collection</title>
+    <link rel="shortcut icon" href="public/ico/image-solid.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="public/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/sweetalert2.min.css">
+    <link rel="stylesheet" href="public/scss/styles.scss">
+     <!-- Font Awesome -->
+     <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+   />
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="my-2">
+        <h1 class="text-center">Picture Collection</h1>
+      </div>
+
+      <div class="my-4 row">
+        <div class="col-md-2">
+          <!-- Botón trigger modal -->
+          <button
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-add"
+          >
+            <i class="mx-1 fas fa-plus"></i> Upload Image
+          </button>
+        </div>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="modal-add"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Upload</h5>
+                <button
+                  type="button"
+                  class="btn-close close-modal-add"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <!-- Formulario de carga -->
+                <form
+                  id="upload-data"
+                  enctype="application/x-www-form-urlencoded"
+                >
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      name="title"
+                      id="title"
+                      class="form-control"
+                      placeholder="Title"
+                    />
+                  </div>
+                  <div class="input-group my-2">
+                    <input
+                      type="file"
+                      class="form-control"
+                      id="image"
+                      name="image"
+                    />
+                    <label class="input-group-text" for="image"
+                      ><i class="fas fa-file-image"></i
+                    ></label>
+                  </div>
+                  <div class="form-group my-2">
+                    <textarea
+                      name="description"
+                      id="description"
+                      class="form-control"
+                      placeholder="Description"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="upload-image"
+                  >
+                    Upload Image
+                  </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary close-modal-add"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="images">
+        <!-- Vista de imágenes -->
+      </div>
+    </div>
+    <script type="module" src="public/js/bootstrap-bundle.js"></script>
+    <script type="module" src="public/js/main.js"></script>
+  </body>
+</html>
